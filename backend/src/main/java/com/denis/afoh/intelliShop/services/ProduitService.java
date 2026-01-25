@@ -1,6 +1,6 @@
 package com.denis.afoh.intelliShop.services;
 
-import com.denis.afoh.intelliShop.Produit;
+import com.denis.afoh.intelliShop.entity.Produit;
 
 import java.util.List;
 

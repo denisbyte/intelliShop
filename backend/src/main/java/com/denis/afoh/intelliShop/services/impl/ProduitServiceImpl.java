@@ -1,6 +1,6 @@
 package com.denis.afoh.intelliShop.services.impl;
 
-import com.denis.afoh.intelliShop.Produit;
+import com.denis.afoh.intelliShop.entity.Produit;
 import com.denis.afoh.intelliShop.repository.ProduitRepository;
 import com.denis.afoh.intelliShop.services.ProduitService;
 import lombok.RequiredArgsConstructor;
@@ -10,7 +10,7 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class ProduitServiceImpl implements ProduitService {
-    private ProduitRepository produitRepository;
+    private final ProduitRepository produitRepository;
     @Override
     public Produit createProduit(String nom, Double prix, String imageUrl) {
         if(nom == null || nom.trim().isEmpty()){
@@ -24,6 +24,9 @@ public class ProduitServiceImpl implements ProduitService {
         }
         // Création et sauvegrade
         Produit produit = new Produit();
+        produit.setNom(nom);
+        produit.setPrix(prix);
+        produit.setImageUrl(imageUrl);
         return produitRepository.save(produit);
     }
 

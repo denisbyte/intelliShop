@@ -1,6 +1,7 @@
 package com.denis.afoh.intelliShop.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -27,6 +28,7 @@ public class Commande {
     private User user;
 
     @OneToMany(mappedBy = "commande", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference
     private List<LigneCommande> lignesCommande;
 
     @PrePersist

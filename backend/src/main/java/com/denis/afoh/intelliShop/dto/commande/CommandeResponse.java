@@ -13,5 +13,5 @@ import java.util.List;
 public class CommandeResponse {
     private Long id;
     private LocalDateTime dateCommande;
-    private List<LigneCommande> items;
+    private List<LigneCommandeResponse> items;
 }

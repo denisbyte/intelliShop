@@ -1,4 +1,4 @@
-package com.denis.afoh.intelliShop;
+package com.denis.afoh.intelliShop.entity;
 
 
 import jakarta.persistence.*;

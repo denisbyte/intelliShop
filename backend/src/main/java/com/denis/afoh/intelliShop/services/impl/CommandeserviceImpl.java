@@ -1,6 +1,6 @@
 package com.denis.afoh.intelliShop.services.impl;
 
-import com.denis.afoh.intelliShop.Produit;
+import com.denis.afoh.intelliShop.entity.Produit;
 
 import com.denis.afoh.intelliShop.dto.commande.CreateCommandeRequest;
 import com.denis.afoh.intelliShop.dto.commande.LigneCommandeRequest;

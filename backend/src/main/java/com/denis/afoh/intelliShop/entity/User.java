@@ -1,5 +1,6 @@
 package com.denis.afoh.intelliShop.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -22,6 +23,7 @@ public class User {
     private String email;
 
     @Column(nullable = false)
+
     private String password;
 
     @ManyToOne

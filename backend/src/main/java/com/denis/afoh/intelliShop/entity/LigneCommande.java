@@ -1,6 +1,7 @@
 package com.denis.afoh.intelliShop.entity;
 
-import com.denis.afoh.intelliShop.Produit;
+import com.denis.afoh.intelliShop.entity.Produit;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -20,6 +21,7 @@ public class LigneCommande {
 
     @ManyToOne
     @JoinColumn(name = "commande_id", nullable = false)
+    @JsonBackReference
     private Commande commande;
 
     @ManyToOne
