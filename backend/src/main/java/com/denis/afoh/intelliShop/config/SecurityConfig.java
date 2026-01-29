@@ -42,6 +42,12 @@ public class SecurityConfig {
                                 "/swagger-ui.html",
                                 "/error"
                         ).permitAll()
+                        .requestMatchers(
+                                "/v3/api-docs/**",
+                                "/swagger-ui/**",
+                                "/swagger-ui.html"
+                        ).permitAll()
+
                         .requestMatchers(HttpMethod.GET, "/api/produits/**").permitAll()
                         // Produits: écriture = ADMIN
                         .requestMatchers(HttpMethod.POST, "/api/produits/**").hasRole("ADMIN")
