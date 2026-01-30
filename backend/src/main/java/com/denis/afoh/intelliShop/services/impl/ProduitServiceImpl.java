@@ -5,8 +5,12 @@ import com.denis.afoh.intelliShop.repository.ProduitRepository;
 import com.denis.afoh.intelliShop.services.ProduitService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
+
+import static org.springframework.http.HttpStatus.NOT_FOUND;
+
 @Service
 @RequiredArgsConstructor
 public class ProduitServiceImpl implements ProduitService {
@@ -53,7 +57,7 @@ public class ProduitServiceImpl implements ProduitService {
     @Override
     public Produit getProduitById(Long id) {
         return produitRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Produit introuvable, id =" + id));
+                .orElseThrow(() -> new ResponseStatusException(NOT_FOUND,"Produit introuvable, id =" + id));
     }
 
     @Override

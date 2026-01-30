@@ -66,6 +66,7 @@ public class ProduitController {
 
     }
 
+
     /**
      * Supprimer un produit.
      * (endpoint ADMIN only)
