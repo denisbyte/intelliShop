@@ -35,6 +35,8 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         //Auth Public
                         .requestMatchers("/api/auth/**").permitAll()
+                        .requestMatchers("/api/files/**").hasRole("ADMIN")
+
                         // Swagger
                         .requestMatchers(
                                 "/v3/api-docs/**",
