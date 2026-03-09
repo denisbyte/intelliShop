@@ -1,0 +1,45 @@
+
+services:
+  postgres:
+    image: postgres:15
+    container_name: intellishop-db
+    environment:
+      POSTGRES_DB: intellishop
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres 
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - intellishop-network
+
+  backend:
+    build: ./backend
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/intellishopdb
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=postgres
+      - JWT_SECRET="+1xfpzhS+OLPvC1Q77ZqD55DLUmdriso3/x+TB4wkJU="
+    env_file:
+      - ./backend/.env
+    depends_on:
+      - postgres
+    networks:
+      - intellishop-network
+
+  frontend:
+    build: ./intellishop-frontend
+    ports:
+      - "4200:4200"
+    depends_on:
+      - backend
+    networks:
+      - intellishop-network
+
+volumes:
+  postgres_data:
+
+networks:
+  intellishop-network:
+    driver: bridge

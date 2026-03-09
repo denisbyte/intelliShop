@@ -1,0 +1,58 @@
+[
+  {
+    "id": 51,
+    "nom": "Samsung S23",
+    "prix": 49.99,
+    "imageUrl": "https://intellishopimg.blob.core.windows.net/produits/samsungS23GalaxyUltra.png",
+    "score": 3.232050807568877
+  },
+  {
+    "id": 45,
+    "nom": "Ecran Lenovo",
+    "prix": 99.99,
+    "imageUrl": "https://intellishopimg.blob.core.windows.net/produits/ecranLenovo.png",
+    "score": 2.958026767880849
+  },
+  {
+    "id": 40,
+    "nom": "AirPodISamsung",
+    "prix": 10.99,
+    "imageUrl": "https://intellishopimg.blob.core.windows.net/produits/airpodSamsung.png",
+    "score": 2.7745966692414834
+  },
+  {
+    "id": 39,
+    "nom": "AirPodIphone",
+    "prix": 10.99,
+    "imageUrl": "https://intellishopimg.blob.core.windows.net/produits/airPodIphone.png",
+    "score": 2.1734281694421025
+  },
+  {
+    "id": 44,
+    "nom": "EcouteurFiliaire",
+    "prix": 9.99,
+    "imageUrl": "https://intellishopimg.blob.core.windows.net/produits/ecouteurFiliaire.png",
+    "score": 2.1734281694421025
+  },
+  {
+    "id": 43,
+    "nom": "ConsoleJeux",
+    "prix": 499.99,
+    "imageUrl": "https://intellishopimg.blob.core.windows.net/produits/consoleJeu.png",
+    "score": 1.7745966692414834
+  },
+  {
+    "id": 48,
+    "nom": "Laptop Dell Latitude",
+    "prix": 499.99,
+    "imageUrl": "https://intellishopimg.blob.core.windows.net/produits/laptop-dell-Latitude.png",
+    "score": 1.7320508075688772
+  },
+  {
+    "id": 38,
+    "nom": "SamsungGalaxy22",
+    "prix": 200.99,
+    "imageUrl": "https://intellishopimg.blob.core.windows.net/produits/SamsungGalaxy22.png",
+    "score": 1.5
+  }
+]

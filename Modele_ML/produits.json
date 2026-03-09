@@ -1,0 +1,116 @@
+[
+    {
+        "id": 1,
+        "nom": "Casque Bluetooth",
+        "prix": 49.99,
+        "imageUrl": "https://example.com/casque.jpg"
+    },
+    {
+        "id": 3,
+        "nom": "Casque Bluetooth ProX20",
+        "prix": 70.99,
+        "imageUrl": "https://example.com/casque-pro-20.jpg"
+    },
+    {
+        "id": 4,
+        "nom": "Casque Bluetooth X57",
+        "prix": 9.99,
+        "imageUrl": "https://example.com/casque-x57.jpg"
+    },
+    {
+        "id": 37,
+        "nom": "Ecran Dell",
+        "prix": 99.99,
+        "imageUrl": "https://intellishopimg.blob.core.windows.net/produits/EcranDell.png"
+    },
+    {
+        "id": 38,
+        "nom": "SamsungGalaxy22",
+        "prix": 200.99,
+        "imageUrl": "https://intellishopimg.blob.core.windows.net/produits/SamsungGalaxy22.png"
+    },
+    {
+        "id": 39,
+        "nom": "AirPodIphone",
+        "prix": 10.99,
+        "imageUrl": "https://intellishopimg.blob.core.windows.net/produits/airPodIphone.png"
+    },
+    {
+        "id": 40,
+        "nom": "AirPodISamsung",
+        "prix": 10.99,
+        "imageUrl": "https://intellishopimg.blob.core.windows.net/produits/airpodSamsung.png"
+    },
+    {
+        "id": 41,
+        "nom": "CasqueX24",
+        "prix": 19.99,
+        "imageUrl": "https://intellishopimg.blob.core.windows.net/produits/casqueX24.png"
+    },
+    {
+        "id": 42,
+        "nom": "CasqueY22",
+        "prix": 19.99,
+        "imageUrl": "https://intellishopimg.blob.core.windows.net/produits/casqueY22.png"
+    },
+    {
+        "id": 43,
+        "nom": "ConsoleJeux",
+        "prix": 499.99,
+        "imageUrl": "https://intellishopimg.blob.core.windows.net/produits/consoleJeu.png"
+    },
+    {
+        "id": 44,
+        "nom": "EcouteurFiliaire",
+        "prix": 9.99,
+        "imageUrl": "https://intellishopimg.blob.core.windows.net/produits/ecouteurFiliaire.png"
+    },
+    {
+        "id": 45,
+        "nom": "Ecran Lenovo",
+        "prix": 99.99,
+        "imageUrl": "https://intellishopimg.blob.core.windows.net/produits/ecranLenovo.png"
+    },
+    {
+        "id": 46,
+        "nom": "Iphone 13",
+        "prix": 199.99,
+        "imageUrl": "https://intellishopimg.blob.core.windows.net/produits/iphone13.png"
+    },
+    {
+        "id": 47,
+        "nom": "Iphone 17",
+        "prix": 399.99,
+        "imageUrl": "https://intellishopimg.blob.core.windows.net/produits/iphone17.png"
+    },
+    {
+        "id": 48,
+        "nom": "Laptop Dell Latitude",
+        "prix": 499.99,
+        "imageUrl": "https://intellishopimg.blob.core.windows.net/produits/laptop-dell-Latitude.png"
+    },
+    {
+        "id": 49,
+        "nom": "Laptop Lenovo",
+        "prix": 499.99,
+        "imageUrl": "https://intellishopimg.blob.core.windows.net/produits/laptopLenovo.png"
+    },
+    {
+        "id": 50,
+        "nom": "Manette Console",
+        "prix": 49.99,
+        "imageUrl": "https://intellishopimg.blob.core.windows.net/produits/manetteConsole.png"
+    },
+    {
+        "id": 51,
+        "nom": "Samsung S23",
+        "prix": 49.99,
+        "imageUrl": "https://intellishopimg.blob.core.windows.net/produits/samsungS23GalaxyUltra.png"
+    },
+    {
+        "id": 52,
+        "nom": "Xbox Console",
+        "prix": 499.99,
+        "imageUrl": "https://intellishopimg.blob.core.windows.net/produits/xBOXConsole.png"
+    }
+]
