@@ -1,0 +1,52 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark px-3">
+    <a class="navbar-brand fw-bold" routerLink="/produits">IntelliShop</a>
+  
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+
+
+    <div class="collapse navbar-collapse" id="nav">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/produits" routerLinkActive="active">Produits</a>
+          <span class="badge bg-success ms-2">{{ cartCount() }}</span>
+
+        </li>
+         
+        @if(auth.isLoggedIn()){
+            <li class="nav-item" >
+                <a class="nav-link" routerLink="/commandes" routerLinkActive="active">Mes commandes</a>
+              </li>
+        }
+      
+        @if(isAdmin()){
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/admin/produits" routerLinkActive="active">Admin Produits</a>
+              </li>
+        }
+      </ul>
+  
+      <div class="d-flex align-items-center gap-2">
+
+        @if(!auth.isLoggedIn()){
+            <a class="btn btn-outline-light btn-sm" routerLink="/login">Login</a>
+        }
+
+        @if(!auth.isLoggedIn()){
+            <a class="btn btn-primary btn-sm" routerLink="/register">Register</a>
+
+        }
+        
+        @if(auth.isLoggedIn()){
+            <button class="btn btn-outline-warning btn-sm" (click)="logout()">
+                Déconnexion
+          </button>
+
+        }
+     
+      </div>
+    </div>
+  </nav>
+  

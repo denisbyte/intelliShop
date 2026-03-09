@@ -1,0 +1,145 @@
+
+<div class="container mt-4">
+
+  <!-- HEADER -->
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h3 class="fw-bold">Gestion des Produits</h3>
+    <button class="btn btn-success" (click)="createProduit()">
+      + Ajouter Produit
+    </button>
+  </div>
+
+  <!-- FORM CREATE / EDIT -->
+  @if (showForm) {
+    <div class="card mb-4 shadow-sm">
+      <div class="card-body">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h5 class="mb-0">
+            @if (isEdit) {
+              Modifier Produit
+            } @else {
+              Ajouter Produit
+            }
+          </h5>
+
+          <button class="btn btn-outline-secondary btn-sm" (click)="cancel()">
+            Annuler
+          </button>
+        </div>
+
+        <div class="row mt-3 g-3">
+
+          <div class="col-md-5">
+            <label class="form-label">Nom</label>
+            <input
+              class="form-control"
+              [(ngModel)]="form.nom"
+              name="nom"
+            />
+          </div>
+
+          <div class="col-md-3">
+            <label class="form-label">Prix</label>
+            <input
+              type="number"
+              class="form-control"
+              [(ngModel)]="form.prix"
+              name="prix"
+            />
+          </div>
+
+          <div class="col-md-4">
+            <label class="form-label">Image URL (Azure)</label>
+            <input
+              class="form-control"
+              [(ngModel)]="form.imageUrl"
+              name="imageUrl"
+            />
+          </div>
+
+        </div>
+
+        @if (error) {
+          <div class="alert alert-danger mt-3 mb-0">
+            {{ error }}
+          </div>
+        }
+
+        <div class="mt-3">
+          <button class="btn btn-success" (click)="save()">
+            @if (isEdit) { Enregistrer } @else { Créer }
+          </button>
+        </div>
+
+      </div>
+    </div>
+  }
+
+  <!-- TABLE PRODUITS -->
+  <div class="table-responsive">
+    <table class="table table-hover align-middle">
+
+      <thead class="table-light">
+        <tr>
+          <th style="width: 100px;">Image</th>
+          <th>Nom</th>
+          <th>Prix</th>
+          <th style="width: 180px;">Actions</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        @for (p of produits; track p.id) {
+
+          @if (azureOnly(p)) {
+
+            <tr>
+
+              <!-- IMAGE -->
+              <td>
+                <img
+                  [src]="imgSrc(p)"
+                  class="rounded"
+                  style="width:70px; height:70px; object-fit:cover;"
+                  (error)="onImgError($event)"
+                />
+              </td>
+
+              <!-- NOM -->
+              <td class="fw-semibold">
+                {{ p.nom }}
+              </td>
+
+              <!-- PRIX -->
+              <td>
+                {{ p.prix }} CHF
+              </td>
+
+              <!-- ACTIONS -->
+              <td>
+                <button
+                  class="btn btn-sm btn-primary me-2"
+                  (click)="startEdit(p)">
+                  Modifier
+                </button>
+
+                <button
+                  class="btn btn-sm btn-danger"
+                  (click)="deleteProduit(p.id)">
+                  Supprimer
+                </button>
+              </td>
+
+            </tr>
+
+          }
+
+        }
+
+      </tbody>
+    </table>
+  </div>
+
+</div>

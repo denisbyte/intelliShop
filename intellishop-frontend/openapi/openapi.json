@@ -1,0 +1,603 @@
+{
+    "openapi": "3.1.0",
+    "info": {
+      "title": "OpenAPI definition",
+      "version": "v0"
+    },
+    "servers": [
+      {
+        "url": "http://localhost:8080",
+        "description": "Generated server url"
+      }
+    ],
+    "security": [
+      {
+        "bearerAuth": []
+      }
+    ],
+    "paths": {
+      "/api/produits/{id}": {
+        "get": {
+          "tags": [
+            "produit-controller"
+          ],
+          "operationId": "getProduitById",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "integer",
+                "format": "int64"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "*/*": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProduitResponse"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "put": {
+          "tags": [
+            "produit-controller"
+          ],
+          "operationId": "updateProduit",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "integer",
+                "format": "int64"
+              }
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProduitRequest"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "*/*": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProduitResponse"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "delete": {
+          "tags": [
+            "produit-controller"
+          ],
+          "operationId": "deleteProduit",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "integer",
+                "format": "int64"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "OK"
+            }
+          }
+        }
+      },
+      "/api/produits": {
+        "get": {
+          "tags": [
+            "produit-controller"
+          ],
+          "operationId": "getAllProduits",
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "*/*": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/ProduitResponse"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "post": {
+          "tags": [
+            "produit-controller"
+          ],
+          "operationId": "createProduit",
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProduitRequest"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "*/*": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProduitResponse"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/files/upload": {
+        "post": {
+          "tags": [
+            "upload-controller"
+          ],
+          "operationId": "upload",
+          "requestBody": {
+            "content": {
+              "multipart/form-data": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "file": {
+                      "type": "string",
+                      "format": "binary"
+                    }
+                  },
+                  "required": [
+                    "file"
+                  ]
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "*/*": {
+                  "schema": {
+                    "type": "object",
+                    "additionalProperties": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/commandes": {
+        "post": {
+          "tags": [
+            "commande-controller"
+          ],
+          "operationId": "createCommande",
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateCommandeRequest"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "*/*": {
+                  "schema": {
+                    "$ref": "#/components/schemas/CommandeResponse"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/auth/register": {
+        "post": {
+          "tags": [
+            "auth-controller"
+          ],
+          "operationId": "register",
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RegisterRequest"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "*/*": {
+                  "schema": {
+                    "$ref": "#/components/schemas/AuthResponse"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/auth/login": {
+        "post": {
+          "tags": [
+            "auth-controller"
+          ],
+          "operationId": "login",
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoginRequest"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "*/*": {
+                  "schema": {
+                    "$ref": "#/components/schemas/AuthResponse"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/users": {
+        "get": {
+          "tags": [
+            "user-controller"
+          ],
+          "operationId": "getAllUsers",
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "*/*": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/UserResponseDto"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/users/{id}": {
+        "get": {
+          "tags": [
+            "user-controller"
+          ],
+          "operationId": "getUserById",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "integer",
+                "format": "int64"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "*/*": {
+                  "schema": {
+                    "$ref": "#/components/schemas/UserResponseDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/commandes/{id}": {
+        "get": {
+          "tags": [
+            "commande-controller"
+          ],
+          "operationId": "getCommandeById",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "integer",
+                "format": "int64"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "*/*": {
+                  "schema": {
+                    "$ref": "#/components/schemas/CommandeResponse"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/commandes/user/{userId}": {
+        "get": {
+          "tags": [
+            "commande-controller"
+          ],
+          "operationId": "getCommandesByUser",
+          "parameters": [
+            {
+              "name": "userId",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "integer",
+                "format": "int64"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "*/*": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/CommandeResponse"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "components": {
+      "schemas": {
+        "ProduitRequest": {
+          "type": "object",
+          "properties": {
+            "nom": {
+              "type": "string"
+            },
+            "prix": {
+              "type": "number",
+              "format": "double"
+            },
+            "imageUrl": {
+              "type": "string"
+            }
+          }
+        },
+        "ProduitResponse": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer",
+              "format": "int64"
+            },
+            "nom": {
+              "type": "string"
+            },
+            "prix": {
+              "type": "number",
+              "format": "double"
+            },
+            "imageUrl": {
+              "type": "string"
+            }
+          }
+        },
+        "CreateCommandeRequest": {
+          "type": "object",
+          "properties": {
+            "userId": {
+              "type": "integer",
+              "format": "int64"
+            },
+            "items": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/LigneCommandeRequest"
+              }
+            }
+          }
+        },
+        "LigneCommandeRequest": {
+          "type": "object",
+          "properties": {
+            "produitId": {
+              "type": "integer",
+              "format": "int64"
+            },
+            "quantite": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        },
+        "CommandeResponse": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer",
+              "format": "int64"
+            },
+            "dateCommande": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "items": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/LigneCommandeResponse"
+              }
+            }
+          }
+        },
+        "LigneCommandeResponse": {
+          "type": "object",
+          "properties": {
+            "nomProduit": {
+              "type": "string"
+            },
+            "quantite": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "prixUnitaire": {
+              "type": "number",
+              "format": "double"
+            },
+            "produitId": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        },
+        "RegisterRequest": {
+          "type": "object",
+          "properties": {
+            "nom": {
+              "type": "string",
+              "minLength": 1
+            },
+            "email": {
+              "type": "string",
+              "format": "email",
+              "minLength": 1
+            },
+            "password": {
+              "type": "string",
+              "maxLength": 32,
+              "minLength": 8
+            }
+          },
+          "required": [
+            "email",
+            "nom",
+            "password"
+          ]
+        },
+        "AuthResponse": {
+          "type": "object",
+          "properties": {
+            "token": {
+              "type": "string"
+            },
+            "userId": {
+              "type": "integer",
+              "format": "int64"
+            },
+            "email": {
+              "type": "string"
+            },
+            "role": {
+              "type": "string"
+            }
+          }
+        },
+        "LoginRequest": {
+          "type": "object",
+          "properties": {
+            "email": {
+              "type": "string",
+              "format": "email",
+              "minLength": 1
+            },
+            "password": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "email",
+            "password"
+          ]
+        },
+        "UserResponseDto": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer",
+              "format": "int64"
+            },
+            "nom": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "role": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "securitySchemes": {
+        "bearerAuth": {
+          "type": "http",
+          "scheme": "bearer",
+          "bearerFormat": "JWT"
+        }
+      }
+    }
+  }

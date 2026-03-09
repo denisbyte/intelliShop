@@ -1,0 +1,52 @@
+
+   <div class="auth-page">
+    <div class="auth-overlay"></div>
+  
+    <div class="auth-card shadow">
+      <div class="auth-header text-center">
+        <div class="brand">IntelliShop</div>
+        <h1 class="title">Connexion</h1>
+        <p class="subtitle">Entrez vos identifiants pour vous connecter.</p>
+      </div>
+  
+      <form (ngSubmit)="login()">
+        <div class="mb-3">
+          <label class="form-label">Email</label>
+          <input
+            type="email"
+            class="form-control auth-input"
+            placeholder="ex: denis@test.com"
+            [(ngModel)]="email"
+            name="email"
+            required
+          />
+        </div>
+  
+        <div class="mb-3">
+          <label class="form-label">Mot de passe</label>
+          <input
+            type="password"
+            class="form-control auth-input"
+            placeholder="••••••••"
+            [(ngModel)]="password"
+            name="password"
+            required
+          />
+        </div>
+  
+        <button type="submit" class="btn btn-primary w-100 auth-btn">
+          Login
+        </button>
+  
+        <div class="text-center mt-3">
+          <span class="text-muted">Pas de compte ?</span>
+          <a class="ms-1 auth-link" routerLink="/register">Créer un compte</a>
+        </div>
+  
+        <div *ngIf="error" class="alert alert-danger mt-3 mb-0">
+          {{ error }}
+        </div>
+      </form>
+    </div>
+  </div>
+  

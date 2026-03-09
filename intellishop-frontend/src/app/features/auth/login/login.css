@@ -1,0 +1,86 @@
+/* Police (simple sans SCSS) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:host {
+  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+/* Page full screen avec background */
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+
+  background-image: url('./assets/img/background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+/* Overlay pour lisibilité */
+.auth-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 15, 25, 0.55);
+  backdrop-filter: blur(2px);
+}
+
+/* Card centrée */
+.auth-card {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 460px;
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 18px;
+  padding: 28px;
+}
+
+/* Header */
+.brand {
+  font-weight: 700;
+  font-size: 26px;
+  color: #4f46e5;
+  letter-spacing: 0.2px;
+  margin-bottom: 8px;
+}
+
+.title {
+  margin: 0;
+  font-weight: 800;
+  font-size: 34px;
+  color: #0b1320;
+}
+
+.subtitle {
+  margin: 8px 0 22px;
+  color: #5b6577;
+  font-size: 15px;
+
+}
+
+/* Inputs */
+.auth-input {
+  padding: 12px 14px;
+  border-radius: 10px;
+}
+
+/* Button */
+.auth-btn {
+  padding: 12px 14px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+/* Link */
+.auth-link {
+  text-decoration: none;
+  font-weight: 600;
+}
+.auth-link:hover {
+  text-decoration: underline;
+}
+
